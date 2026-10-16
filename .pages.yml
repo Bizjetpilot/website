@@ -23,6 +23,7 @@ content:
     type: collection
     path: bizjetpilot-homepage/bizjetpilot-homepage/content/reviews
     format: json
+    extension: json
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: slug, label: URL slug, type: string, required: true }
@@ -38,6 +39,7 @@ content:
     type: collection
     path: bizjetpilot-homepage/bizjetpilot-homepage/content/tutorials
     format: json
+    extension: json
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: slug, label: URL slug, type: string, required: true }
@@ -53,6 +55,7 @@ content:
     type: collection
     path: bizjetpilot-homepage/bizjetpilot-homepage/content/streams
     format: json
+    extension: json
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: slug, label: URL slug, type: string, required: true }
