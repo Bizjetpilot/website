@@ -17,10 +17,10 @@ content:
       - { name: summary, label: Summary, type: text }
       - { name: body, label: Article, type: text }
       - { name: youtube_url, label: YouTube URL, type: string }
-  - name: bizjetpilot-homepage/bizjetpilot-homepage/content/reviews
+  - name: reviews
     label: Reviews
     type: collection
-    path: content/reviews
+    path: bizjetpilot-homepage/bizjetpilot-homepage/content/reviews
     format: json
     fields:
       - { name: title, label: Title, type: string, required: true }
@@ -32,10 +32,10 @@ content:
       - { name: summary, label: Summary, type: text }
       - { name: body, label: Review, type: text }
       - { name: youtube_url, label: YouTube URL, type: string }
-  - name: bizjetpilot-homepage/bizjetpilot-homepage/content/tutorials
+  - name: tutorials
     label: Tutorials
     type: collection
-    path: content/tutorials
+    path: bizjetpilot-homepage/bizjetpilot-homepage/content/tutorials
     format: json
     fields:
       - { name: title, label: Title, type: string, required: true }
@@ -47,10 +47,10 @@ content:
       - { name: summary, label: Summary, type: text }
       - { name: body, label: Tutorial, type: text }
       - { name: youtube_url, label: YouTube URL, type: string }
-  - name: bizjetpilot-homepage/bizjetpilot-homepage/content/streams
+  - name: streams
     label: Live Streams
     type: collection
-    path: content/streams
+    path: bizjetpilot-homepage/bizjetpilot-homepage/content/streams
     format: json
     fields:
       - { name: title, label: Title, type: string, required: true }
