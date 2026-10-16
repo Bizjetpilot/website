@@ -16,6 +16,7 @@ content:
       - { name: date, label: Date, type: date }
       - { name: category, label: Category, type: string }
       - { name: simulator, label: Simulator, type: string }
+      - { name: thumbnail, label: Thumbnail image, type: image }
       - { name: summary, label: Summary, type: text }
       - { name: body, label: Article, type: text }
       - { name: youtube_url, label: YouTube URL, type: string }
