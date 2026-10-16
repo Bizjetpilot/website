@@ -4,3 +4,19 @@
 @media(max-width:700px){.container{width:min(100% - 32px,1180px)}.header-inner{height:76px}.brand{font-size:23px}.brand img{width:52px;height:52px}.menu-toggle{display:flex;width:42px;height:42px;background:transparent;border:1px solid #537477;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer}.menu-toggle span{height:2px;width:20px;background:white}.nav{display:none;position:absolute;top:76px;left:0;right:0;background:#041f26;padding:20px 24px 25px;flex-direction:column;align-items:stretch;gap:0;border-top:1px solid #35595d}.nav.open{display:flex}.nav a{padding:13px 0;border-bottom:1px solid #ffffff18}.hero-inner{grid-template-columns:1fr;min-height:unset;gap:0}.hero-copy{padding:65px 0 20px}.hero-art{min-height:330px;padding-bottom:25px}.hero-art img{max-width:300px}.art-glow{width:320px;height:320px}.art-tag{bottom:20px;right:5px}.hero-meta{gap:14px}.hero-meta span{font-size:8px}h1{font-size:clamp(54px,12vw,85px)}.section{padding:60px 0}.intro-grid,.editorial-grid,.contact-inner{grid-template-columns:1fr;gap:28px}.intro-copy{padding-left:20px}.feature-grid{grid-template-columns:1fr 1fr}.feature-card{min-height:250px;padding:20px 16px}.feature-card h3{font-size:24px}.feature-card p{font-size:11px}.ticker-inner{font-size:8px;gap:9px}.ticker-inner span:nth-last-child(-n+4),.ticker-inner i:nth-last-child(-n+4){display:none}.stream-details h3{font-size:44px}.academy-mark{display:none}.footer-inner{flex-wrap:wrap}.footer p{order:3;flex-basis:100%}.footer-inner>span{margin-left:auto}}
 @media(max-width:390px){.feature-grid{grid-template-columns:1fr}.hero-meta span{flex-basis:45%}.actions .btn{width:100%}.flight-fields{grid-template-columns:1fr}.brand small{letter-spacing:.8px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+/* Version 2: flight deck and route-data hero */
+.hero{background:#031c24;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(2,23,30,.98) 0%,rgba(3,32,39,.93) 35%,rgba(3,32,39,.40) 69%,rgba(3,32,39,.12) 100%),url("assets/flightdeck-route-background.webp");background-size:cover;background-position:center right;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,29,36,.7),transparent 22%);z-index:-1;pointer-events:none}
+.hero-grid{opacity:.10;pointer-events:none}
+.hero-inner{grid-template-columns:minmax(0,1.5fr) minmax(170px,.5fr);min-height:580px}
+.hero-copy{padding:85px 0 90px}
+.hero h1{font-family:'DM Sans',Arial,sans-serif;font-size:clamp(43px,4.7vw,72px);font-weight:750;line-height:1.1;letter-spacing:-1.9px;max-width:800px;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero-desc{max-width:575px}
+.hero-art{min-height:360px;align-self:stretch;align-content:center;justify-items:end}
+.hero-art img{width:min(185px,100%);filter:drop-shadow(0 12px 30px #000a)}
+.art-glow{display:none}
+.art-tag{right:0;bottom:80px;font-size:8px}
+@media(max-width:700px){.hero::before{background-image:linear-gradient(180deg,rgba(2,23,30,.86),rgba(3,32,39,.83) 50%,rgba(3,32,39,.35)),url("assets/flightdeck-route-background.webp");background-position:60% center}.hero-inner{grid-template-columns:1fr}.hero-copy{padding:65px 0 24px}.hero h1{font-size:clamp(39px,9vw,61px);letter-spacing:-1px}.hero-art{min-height:150px;justify-items:end;padding:0 0 26px}.hero-art img{width:125px}.art-tag{bottom:32px;right:145px;font-size:7px}}

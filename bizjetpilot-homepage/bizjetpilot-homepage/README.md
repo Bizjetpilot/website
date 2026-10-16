@@ -36,3 +36,12 @@ Open `index.html` in a browser. Google Fonts requires an internet connection; fa
 ## Next steps
 
 Add separate News, Reviews, Contact and Streams pages; integrate a GitHub-backed content management system; add verified social links and real scheduled YouTube broadcasts; implement a working contact form and privacy policy.
+
+
+## Version 2: flight deck hero
+
+The homepage now features the headline **Business Aviation in the Virtual World** and a flight-deck background with route-data overlays. The original logo and stream template remain unchanged. The cockpit image is an AI-generated illustrative visual, not a screenshot of a particular simulator or aircraft.
+
+### Cloudflare Pages
+
+If you upload the **contents** of this folder to the repository root, set the Pages build output directory to `/` (or leave it as the root). If you upload this entire folder to the repository root, set the build output directory to `bizjetpilot-homepage`. Your existing deployment currently uses `bizjetpilot-homepage/bizjetpilot-homepage`; to preserve that configuration, replace the files within that nested directory.
