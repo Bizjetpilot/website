@@ -40,3 +40,4 @@ Contact page is informational until you provide a business email address and con
 ## External links
 
 Resource links go to third-party services. YouTube and Twitch links can be added per scheduled stream, but automatic simultaneous publishing is not implemented.
+Website deployment configuration updated.
