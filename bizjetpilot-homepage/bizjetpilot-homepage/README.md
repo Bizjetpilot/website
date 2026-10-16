@@ -1,47 +1,42 @@
-# BizJet Pilot — Homepage prototype
+# BizJet Pilot — complete website
 
-A responsive, static homepage for **Bizjetpilot.me**, built using the supplied official logo and live-stream thumbnail.
+A responsive, multi-page website for business aviation flight simulation. Uses your original logo, live-stream graphic and the Version 2 flight deck background.
 
-## What's included
+## Included
 
-- `index.html` — homepage with navigation, hero, content sections and live-stream area.
-- `styles.css` — responsive teal, lime and white visual design.
-- `script.js` — mobile navigation and automatic copyright year.
-- `assets/bizjetpilot-logo.png` — supplied logo.
-- `assets/livestream-template.png` — supplied stream thumbnail template.
+- Home, News, Reviews, Tutorials, Resources, Live Streams, Contact and Privacy pages
+- Search on news, reviews and tutorials listings
+- Individual article and live-stream pages generated from JSON content
+- Draft/published workflow
+- Starter Pages CMS configuration (`.pages.yml`) — configuration must be placed in the **repository root**, with its `path` values adjusted if site files live in a subfolder. The CMS integration has not yet been tested against your GitHub account.
+- No paid dependencies, no fake published reviews or events
 
-## Preview
+## Build
 
-Open `index.html` in a browser. Google Fonts requires an internet connection; fallback fonts are provided.
+Requires Node.js (available in Cloudflare's build environment). Run `npm run build` or `node build.js`. The finished site is generated into `dist/`.
 
-## Publish with GitHub and Cloudflare Pages
+## IMPORTANT: Cloudflare Pages changes
 
-1. Extract this ZIP on your computer.
-2. In your GitHub repository `Bizjetpilot/website`, select **Add file → Upload files**.
-3. Upload `index.html`, `styles.css`, `script.js` and the **assets** folder, keeping the folder structure intact. Commit the changes.
-4. In Cloudflare, open **Workers & Pages → Create → Pages → Connect to Git**. Select `Bizjetpilot/website` and the `main` branch.
-5. Choose a static/no-framework project. Set the build command to blank and the output directory to `/` (repository root), if prompted.
-6. Deploy and test the `*.pages.dev` preview before attaching your domain.
+Your existing site is currently in `bizjetpilot-homepage/bizjetpilot-homepage` within the GitHub repository. Upload the **contents of this ZIP** into that same folder, replacing files with matching names.
 
-**Important:** Do not alter your 123 Reg DNS yet. Check existing DNS and email records before connecting the domain.
+Then in Cloudflare Pages > Settings > Builds & deployments, change:
 
-## Prototype limitations
+- Build command: `cd bizjetpilot-homepage/bizjetpilot-homepage && node build.js`
+- Build output directory: `bizjetpilot-homepage/bizjetpilot-homepage/dist`
+- Root directory: blank
 
-- This is the **homepage only**. Navigation for News, Reviews, Live Streams and Contact currently scrolls to homepage sections. Separate pages and the publishing CMS are future steps.
-- No news articles, review scores, streaming dates, YouTube URLs or Twitch URLs have been invented.
-- The supplied live-stream thumbnail is a blank reusable announcement template; flight details are intentionally marked as forthcoming.
-- The stream updates button currently jumps to the contact section. It does not sign anyone up or send emails.
-- External Google Fonts are optional and can be self-hosted later.
+**Do not keep the old blank build command / output directory** — this new site uses a build step to create article pages.
 
-## Next steps
+## Publishing content
 
-Add separate News, Reviews, Contact and Streams pages; integrate a GitHub-backed content management system; add verified social links and real scheduled YouTube broadcasts; implement a working contact form and privacy policy.
+In `content/news`, `content/reviews`, `content/tutorials`, and `content/streams`, duplicate a JSON file and edit the fields. Set `status` to `published` to make the entry appear on the site. Cloudflare rebuilds after a GitHub commit. Keep drafts marked `draft`.
 
+For a CMS dashboard, `.pages.yml` is a starting configuration for Pages CMS, but because the site currently lives in nested folders, CMS paths must be updated and its integration tested. It is not a fully configured admin login yet.
 
-## Version 2: flight deck hero
+## Contact
 
-The homepage now features the headline **Business Aviation in the Virtual World** and a flight-deck background with route-data overlays. The original logo and stream template remain unchanged. The cockpit image is an AI-generated illustrative visual, not a screenshot of a particular simulator or aircraft.
+Contact page is informational until you provide a business email address and configure a spam-protected contact form.
 
-### Cloudflare Pages
+## External links
 
-If you upload the **contents** of this folder to the repository root, set the Pages build output directory to `/` (or leave it as the root). If you upload this entire folder to the repository root, set the build output directory to `bizjetpilot-homepage`. Your existing deployment currently uses `bizjetpilot-homepage/bizjetpilot-homepage`; to preserve that configuration, replace the files within that nested directory.
+Resource links go to third-party services. YouTube and Twitch links can be added per scheduled stream, but automatic simultaneous publishing is not implemented.

@@ -1,0 +1,15 @@
+{
+  "title": "Upcoming flight — template",
+  "slug": "upcoming-flight-template",
+  "status": "draft",
+  "date": "2026-10-16",
+  "time_utc": "",
+  "category": "Live flight",
+  "from": "",
+  "to": "",
+  "aircraft": "",
+  "simulator": "MSFS 2024",
+  "summary": "Add route, aircraft and scheduled time before publishing.",
+  "youtube_url": "",
+  "twitch_url": ""
+}
