@@ -19,6 +19,8 @@ content:
       - { name: thumbnail, label: Thumbnail image, type: image }
       - { name: summary, label: Summary, type: text }
       - { name: body, label: Article, type: text }
+      - { name: article_image, label: Article image, type: image }
+      - { name: image_caption, label: Image caption, type: string }
       - { name: youtube_url, label: YouTube URL, type: string }
   - name: reviews
     label: Reviews
