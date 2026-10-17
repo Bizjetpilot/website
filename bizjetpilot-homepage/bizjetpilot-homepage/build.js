@@ -108,6 +108,31 @@ write('/live-streams/',shell('Live Streams',`<div class="wrap interior"><div cla
 for(const x of all.streams){write('/live-streams/'+x.slug+'/',shell(x.title,`<div class="wrap article"><a class="back" href="/live-streams/">← Live Streams</a><h1>${esc(x.title)}</h1><img class="wideimage" src="/assets/livestream-template.png" alt="Live stream artwork"><p>${esc(x.summary)}</p><dl class="flightdata"><dt>From</dt><dd>${esc(x.from)}</dd><dt>To</dt><dd>${esc(x.to)}</dd><dt>Aircraft</dt><dd>${esc(x.aircraft)}</dd><dt>Simulator</dt><dd>${esc(x.simulator)}</dd><dt>Date / UTC</dt><dd>${esc(x.date)} ${esc(x.time_utc)}</dd></dl>${x.youtube_url?`<a class="btn" href="${esc(x.youtube_url)}">Watch on YouTube ↗</a>`:''}${x.twitch_url?`<a class="btn outline" href="${esc(x.twitch_url)}">Watch on Twitch ↗</a>`:''}</div>`,'Live Streams'))}
 write('/resources/',shell('Resources',`<div class="wrap interior"><div class="pagetop"><span class="eyebrow">FLIGHT SIM TOOLKIT</span><h1>Resources</h1><p>Useful starting points for business jet flight simulation. External services are independent of BizJet Pilot.</p></div><div class="cards">${[['Microsoft Flight Simulator','https://www.flightsimulator.com/','Official Microsoft Flight Simulator news and updates.'],['X-Plane','https://www.x-plane.com/','Official X-Plane simulator information.'],['SimBrief','https://www.simbrief.com/','Flight planning and operational flight plans.'],['VATSIM','https://vatsim.net/','Online air traffic control network.'],['Navigraph','https://navigraph.com/','Navigation charts and data services.'],['Little Navmap','https://albar965.github.io/littlenavmap.html','Free flight planning and moving-map software.']].map(([t,u,d])=>`<a class="card resource" href="${u}" target="_blank" rel="noopener noreferrer"><div class="cardbody"><h3>${t} ↗</h3><p>${d}</p></div></a>`).join('')}</div></div>`,'Resources'));
 write('/contact/',shell('Contact',`<div class="wrap interior narrow"><div class="pagetop"><span class="eyebrow">GET IN TOUCH</span><h1>Contact BizJet Pilot</h1><p>News tips, review enquiries, developer announcements, collaboration opportunities or feedback are all welcome.</p></div><div class="panel"><h2>Send an enquiry</h2><p>Contact details are being finalised. Until then, please use the contact information published on BizJet Pilot's official YouTube or Twitch channel.</p><p class="note">A secure contact form will be added once a form service and destination email are configured. This page does not currently collect or submit personal information.</p></div></div>`,'Contact'));
-write('/privacy/',shell('Privacy',`<div class="wrap interior narrow"><h1>Privacy</h1><p>This website is hosted by Cloudflare Pages. Hosting providers may process technical information such as IP addresses and request logs to deliver and protect the site.</p><p>External links to YouTube, Twitch and other services are subject to those services' privacy policies. Embedded media and analytics are not enabled in this initial version.</p><p>We do not currently operate a contact form, newsletter or user accounts on the public website. This notice should be reviewed before adding those features.</p></div>`,'Privacy'));
+write('/privacy/',shell('Privacy',`<div class="wrap interior narrow">
+<h1>Privacy Policy</h1>
+<p><strong>BizJet Pilot</strong> is a flight simulation website covering business aviation, livestreams, news, reviews and tutorials.</p>
+
+<h2>Website hosting</h2>
+<p>This website is hosted by Cloudflare Pages. Cloudflare may process technical information, including IP addresses and request logs, to deliver, secure and operate the website.</p>
+
+<h2>Google and YouTube integration</h2>
+<p>BizJet Pilot uses the YouTube Data API to manage livestreams on the BizJet Pilot YouTube channel. The integration is operated by the website owner and is not available for visitors to connect their own YouTube accounts.</p>
+<p>When the website owner authorises the integration through Google, the application may access YouTube channel information and create or manage scheduled livestreams, including their titles, descriptions, scheduled times and thumbnails.</p>
+<p>Google OAuth authorisation credentials are used to authenticate these requests. They are not displayed to website visitors or intentionally published in the website's source code.</p>
+<p>The integration does not request access to visitors' Google accounts. Visitors do not need to sign in with Google to use this website.</p>
+
+<h2>Data sharing and retention</h2>
+<p>Authorisation credentials are used only to operate the YouTube integration. They are not sold or used for advertising. Credentials are retained while the integration is authorised and may be deleted when the integration is disconnected.</p>
+
+<h2>Third-party services</h2>
+<p>Links to YouTube, Twitch and other external services are subject to their respective privacy policies. Visitors who use those services should review the applicable policies.</p>
+<p>Google's privacy policy is available at <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+
+<h2>Contact</h2>
+<p>For questions about this privacy policy or the YouTube integration, please use the contact information provided on the BizJet Pilot website.</p>
+
+<h2>Updates</h2>
+<p>This policy may be updated when website features or data-processing practices change.</p>
+</div>`,'Privacy'));
 fs.copyFileSync(path.join(root,'styles.css'),path.join(out,'styles.css'));fs.copyFileSync(path.join(root,'script.js'),path.join(out,'script.js'));
 fs.writeFileSync(path.join(out,'robots.txt'),'User-agent: *\nAllow: /\n');console.log('Built '+Object.values(all).flat().length+' published posts into '+out);
