@@ -3,7 +3,76 @@ const root=__dirname, out=path.join(root,'dist');fs.rmSync(out,{recursive:true,f
 const site='BizJet Pilot', desc='Independent business jet flight simulation news, reviews, tutorials and live streams for MSFS 2024 and X-Plane 12.';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const slug=s=>String(s).toLowerCase().replace(/[^a-z0-9-]/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
-const md=s=>esc(s||'').split(/\n\n+/).map(p=>'<p>'+p.replace(/\n/g,'<br>')+'</p>').join('');
+function md(s) {
+  const inline = text => esc(text)
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>');
+
+  const lines = String(s || '').split(/\r?\n/);
+  const output = [];
+  let paragraph = [];
+  let list = null;
+
+  function closeParagraph() {
+    if (paragraph.length) {
+      output.push('<p>' + paragraph.map(inline).join('<br>') + '</p>');
+      paragraph = [];
+    }
+  }
+
+  function closeList() {
+    if (list) {
+      output.push('</' + list + '>');
+      list = null;
+    }
+  }
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+
+    if (!trimmed) {
+      closeParagraph();
+      closeList();
+      continue;
+    }
+
+    const heading = trimmed.match(/^(#{1,3})\s+(.+)$/);
+
+    if (heading) {
+      closeParagraph();
+      closeList();
+      const level = heading[1].length;
+      output.push('<h' + level + '>' + inline(heading[2]) + '</h' + level + '>');
+      continue;
+    }
+
+    const bullet = trimmed.match(/^[-*]\s+(.+)$/);
+    const numbered = trimmed.match(/^\d+\.\s+(.+)$/);
+
+    if (bullet || numbered) {
+      closeParagraph();
+
+      const type = bullet ? 'ul' : 'ol';
+
+      if (list !== type) {
+        closeList();
+        output.push('<' + type + '>');
+        list = type;
+      }
+
+      output.push('<li>' + inline((bullet || numbered)[1]) + '</li>');
+      continue;
+    }
+
+    closeList();
+    paragraph.push(trimmed);
+  }
+
+  closeParagraph();
+  closeList();
+
+  return output.join('\n');
+}
 function read(type){return fs.readdirSync(path.join(root,'content',type)).filter(x=>x.endsWith('.json')).map(f=>{let x=JSON.parse(fs.readFileSync(path.join(root,'content',type,f)));x.slug=slug(x.slug||f.replace('.json',''));x.type=type;return x}).filter(x=>x.status==='published').sort((a,b)=>(b.date||'').localeCompare(a.date||''));}
 const all={news:read('news'),reviews:read('reviews'),tutorials:read('tutorials'),streams:read('streams')};
 const nav=[['Home','/'],['News','/news/'],['Reviews','/reviews/'],['Tutorials','/tutorials/'],['Resources','/resources/'],['Live Streams','/live-streams/'],['Contact','/contact/']];
