@@ -1,0 +1,19 @@
+name: BizJet Pilot YouTube Livestream
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'bizjetpilot-homepage/bizjetpilot-homepage/content/streams/**'
+
+jobs:
+  check-livestream:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out website files
+        uses: actions/checkout@v4
+
+      - name: Confirm workflow is running
+        run: echo "BizJet Pilot livestream workflow triggered successfully."
