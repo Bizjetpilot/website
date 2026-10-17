@@ -18,7 +18,7 @@ content:
       - { name: simulator, label: Simulator, type: string }
       - { name: thumbnail, label: Thumbnail image, type: image }
       - { name: summary, label: Summary, type: text }
-      - { name: body, label: Article, type: text }
+      - { name: body, label: Article, type: rich-text }
       - { name: article_image, label: Article image, type: image }
       - { name: image_caption, label: Image caption, type: string }
       - { name: youtube_url, label: YouTube URL, type: string }
