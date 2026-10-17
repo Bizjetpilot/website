@@ -1,5 +1,8 @@
 const fs=require('fs'),path=require('path');
 const root=__dirname, out=path.join(root,'dist');fs.rmSync(out,{recursive:true,force:true});fs.mkdirSync(out,{recursive:true});fs.cpSync(path.join(root,'assets'),path.join(out,'assets'),{recursive:true});
+for (const file of fs.readdirSync(root).filter(name => /^google[a-z0-9]+\.html$/.test(name))) {
+  fs.copyFileSync(path.join(root, file), path.join(out, file));
+}
 const site='BizJet Pilot', desc='Independent business jet flight simulation news, reviews, tutorials and live streams for MSFS 2024 and X-Plane 12.';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const slug=s=>String(s).toLowerCase().replace(/[^a-z0-9-]/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
