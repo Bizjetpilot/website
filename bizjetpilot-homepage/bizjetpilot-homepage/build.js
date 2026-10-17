@@ -35,7 +35,8 @@ function md(s) {
       closeList();
       continue;
     }
-    const image = trimmed.match(/^!\[([^\]]*)\]\((\/assets\/[a-zA-Z0-9._/-]+\.(?:png|jpg|jpeg|webp|gif))\)$/i);
+    const image = trimmed.match(/^!\[([^\]]*)\]\(<?(\/?assets\/[^)>]+\.(?:png|jpg|jpeg|webp|gif))>?\)$/i);
+if (image && !image[2].startsWith('/')) image[2] = '/' + image[2];
 
     if (image) {
       closeParagraph();
