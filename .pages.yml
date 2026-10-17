@@ -72,5 +72,6 @@ content:
       - { name: aircraft, label: Aircraft, type: string }
       - { name: simulator, label: Simulator, type: string }
       - { name: summary, label: Description, type: text }
+      - { name: thumbnail, label: Stream thumbnail, type: image }
       - { name: youtube_url, label: YouTube URL, type: string }
       - { name: twitch_url, label: Twitch URL, type: string }
