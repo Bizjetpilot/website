@@ -35,7 +35,20 @@ function md(s) {
       closeList();
       continue;
     }
+    const image = trimmed.match(/^!\[([^\]]*)\]\((\/assets\/[a-zA-Z0-9._/-]+\.(?:png|jpg|jpeg|webp|gif))\)$/i);
 
+    if (image) {
+      closeParagraph();
+      closeList();
+
+      output.push(
+        '<figure class="article-image">' +
+        '<img src="' + esc(image[2]) + '" alt="' + esc(image[1]) + '" loading="lazy">' +
+        '</figure>'
+      );
+
+      continue;
+    }
     const heading = trimmed.match(/^(#{1,3})\s+(.+)$/);
 
     if (heading) {
