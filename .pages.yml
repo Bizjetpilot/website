@@ -36,7 +36,7 @@ content:
       - { name: category, label: Category, type: string }
       - { name: simulator, label: Simulator, type: string }
       - { name: summary, label: Summary, type: text }
-      - { name: body, label: Review, type: text }
+      - { name: body, label: Review, type: rich-text }
       - { name: youtube_url, label: YouTube URL, type: string }
   - name: tutorials
     label: Tutorials
