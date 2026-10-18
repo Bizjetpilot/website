@@ -136,7 +136,27 @@ def save_youtube_link(file_path, stream, broadcast):
         json.dump(stream, file, indent=2, ensure_ascii=False)
         file.write("\n")
 
+def test_youtube_connection():
+    """Verify YouTube access without changing anything."""
 
+    youtube = connect_to_youtube()
+
+    response = youtube.channels().list(
+        part="snippet",
+        mine=True
+    ).execute()
+
+    channels = response.get("items", [])
+
+    if not channels:
+        raise RuntimeError(
+            "No authorised YouTube channel was found."
+        )
+
+    print(
+        "YouTube connection successful: "
+        + channels[0]["snippet"]["title"]
+    )
 def main():
     """Check announcements without creating YouTube broadcasts."""
 
