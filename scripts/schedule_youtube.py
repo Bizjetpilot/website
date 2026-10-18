@@ -207,6 +207,7 @@ def schedule_ready_streams():
             continue
 
         print(f"Ready to schedule: {stream['title']}")
+        # SAFETY: Do not create YouTube broadcasts until explicitly enabled.
         print("SAFE MODE — broadcast creation skipped.")
 def main():
     """Check announcements without creating YouTube broadcasts."""
