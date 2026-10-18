@@ -90,3 +90,34 @@ def load_ready_streams():
         ready_streams.append((file_path, stream))
 
     return ready_streams
+
+
+def create_youtube_broadcast(youtube, stream):
+    """Create a private, scheduled YouTube livestream."""
+
+    scheduled_time = (
+        f"{stream['date']}T{stream['time_utc']}:00Z"
+    )
+
+    description = stream.get("summary", "")
+
+    response = youtube.liveBroadcasts().insert(
+        part="snippet,status,contentDetails",
+        body={
+            "snippet": {
+                "title": stream["title"],
+                "description": description,
+                "scheduledStartTime": scheduled_time
+            },
+            "status": {
+                "privacyStatus": "private",
+                "selfDeclaredMadeForKids": False
+            },
+            "contentDetails": {
+                "enableAutoStart": False,
+                "enableAutoStop": False
+            }
+        }
+    ).execute()
+
+    return response
