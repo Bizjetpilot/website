@@ -135,3 +135,24 @@ def save_youtube_link(file_path, stream, broadcast):
     with file_path.open("w", encoding="utf-8") as file:
         json.dump(stream, file, indent=2, ensure_ascii=False)
         file.write("\n")
+
+
+def main():
+    """Check announcements without creating YouTube broadcasts."""
+
+    ready_streams = load_ready_streams()
+
+    print(f"Found {len(ready_streams)} ready livestream(s).")
+
+    for file_path, stream in ready_streams:
+        print(
+            f"READY: {file_path.name} | "
+            f"{stream['title']} | "
+            f"{stream['date']} {stream['time_utc']} UTC"
+        )
+
+    print("SAFE TEST COMPLETE — no YouTube broadcasts created.")
+
+
+if __name__ == "__main__":
+    main()
