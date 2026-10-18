@@ -197,6 +197,8 @@ def schedule_ready_streams():
     youtube = connect_to_youtube()
     ready_streams = load_ready_streams()
 
+    print(f"Duplicate check: {len(ready_streams)} eligible announcement(s).")
+
     for file_path, stream in ready_streams:
         existing = find_existing_broadcast(youtube, stream)
 
