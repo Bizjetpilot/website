@@ -210,7 +210,9 @@ def main():
     """Check announcements without creating YouTube broadcasts."""
     
     test_youtube_connection()
-    
+
+    schedule_ready_streams()
+
     ready_streams = load_ready_streams()
 
     print(f"Found {len(ready_streams)} ready livestream(s).")
