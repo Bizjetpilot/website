@@ -136,6 +136,38 @@ def save_youtube_link(file_path, stream, broadcast):
         json.dump(stream, file, indent=2, ensure_ascii=False)
         file.write("\n")
 
+
+def find_existing_broadcast(youtube, stream):
+    """Check for an existing scheduled broadcast."""
+
+    scheduled_time = (
+        f"{stream['date']}T{stream['time_utc']}:00Z"
+    )
+
+    request = youtube.liveBroadcasts().list(
+        part="snippet,status",
+        broadcastStatus="upcoming",
+        maxResults=50
+    )
+
+    while request is not None:
+        response = request.execute()
+
+        for broadcast in response.get("items", []):
+            snippet = broadcast.get("snippet", {})
+
+            if (
+                snippet.get("title") == stream["title"]
+                and snippet.get("scheduledStartTime")
+                == scheduled_time
+            ):
+                return broadcast
+
+        request = youtube.liveBroadcasts().list_next(
+            request, response
+        )
+
+    return None
 def test_youtube_connection():
     """Verify YouTube access without changing anything."""
 
