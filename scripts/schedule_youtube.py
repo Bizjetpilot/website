@@ -70,7 +70,16 @@ def load_ready_streams():
         # Avoid announcements already linked to YouTube
         if stream.get("youtube_url"):
             continue
+        # Only schedule livestreams in the future
+        try:
+            scheduled_time = datetime.fromisoformat(
+                f"{stream['date']}T{stream['time_utc'].replace('Z', '')}"
+            ).replace(tzinfo=timezone.utc)
+        except (ValueError, TypeError):
+            continue
 
+        if scheduled_time <= datetime.now(timezone.utc):
+            continue
         ready_streams.append((file_path, stream))
 
     return ready_streams
