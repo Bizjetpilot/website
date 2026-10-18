@@ -70,6 +70,13 @@ def load_ready_streams():
         # Avoid announcements already linked to YouTube
         if stream.get("youtube_url"):
             continue
+        # Require UTC time in HH:MM format
+        time_text = stream["time_utc"]
+
+        try:
+            datetime.strptime(time_text, "%H:%M")
+        except (ValueError, TypeError):
+            continue
         # Only schedule livestreams in the future
         try:
             scheduled_time = datetime.fromisoformat(
