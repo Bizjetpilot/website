@@ -213,6 +213,8 @@ def schedule_ready_streams():
         if not ENABLE_BROADCAST_CREATION:
             print("SAFE MODE — broadcast creation skipped.")
             continue
+        broadcast = create_youtube_broadcast(youtube, stream)
+        save_youtube_link(file_path, stream, broadcast)     
 def main():
     """Check announcements without creating YouTube broadcasts."""
     
