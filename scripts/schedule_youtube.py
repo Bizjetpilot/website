@@ -207,7 +207,8 @@ def schedule_ready_streams():
             print(f"Existing broadcast found: {stream['title']}")
             continue
 
-    print(f"Ready to schedule: {stream['title']}")
+        print(f"Ready to schedule: {stream['title']}")
+
         # SAFETY: Do not create YouTube broadcasts until explicitly enabled.
         if not ENABLE_BROADCAST_CREATION:
             print("SAFE MODE — broadcast creation skipped.")
