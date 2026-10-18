@@ -1,6 +1,7 @@
 name: BizJet Pilot YouTube Livestream
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
