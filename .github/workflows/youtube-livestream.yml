@@ -35,7 +35,7 @@ jobs:
           YOUTUBE_TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
         run: |
           python scripts/schedule_youtube.py
-                - name: Save updated livestream announcements
+      - name: Save updated livestream announcements
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
