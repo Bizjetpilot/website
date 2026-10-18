@@ -189,6 +189,23 @@ def test_youtube_connection():
         "YouTube connection successful: "
         + channels[0]["snippet"]["title"]
     )
+
+
+def schedule_ready_streams():
+    """Schedule eligible announcements without creating duplicates."""
+
+    youtube = connect_to_youtube()
+    ready_streams = load_ready_streams()
+
+    for file_path, stream in ready_streams:
+        existing = find_existing_broadcast(youtube, stream)
+
+        if existing:
+            print(f"Existing broadcast found: {stream['title']}")
+            continue
+
+        print(f"Ready to schedule: {stream['title']}")
+        print("SAFE MODE — broadcast creation skipped.")
 def main():
     """Check announcements without creating YouTube broadcasts."""
     
