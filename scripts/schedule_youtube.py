@@ -121,3 +121,17 @@ def create_youtube_broadcast(youtube, stream):
     ).execute()
 
     return response
+
+
+def save_youtube_link(file_path, stream, broadcast):
+    """Record the scheduled YouTube broadcast in its announcement."""
+
+    broadcast_id = broadcast["id"]
+
+    stream["youtube_url"] = (
+        f"https://www.youtube.com/watch?v={broadcast_id}"
+    )
+
+    with file_path.open("w", encoding="utf-8") as file:
+        json.dump(stream, file, indent=2, ensure_ascii=False)
+        file.write("\n")
