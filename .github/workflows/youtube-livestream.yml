@@ -1,5 +1,10 @@
 name: BizJet Pilot YouTube Livestream
 
+
+permissions:
+  contents: write
+
+  
 on:
   workflow_dispatch:
   push:
