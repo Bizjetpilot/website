@@ -25,3 +25,6 @@ jobs:
           pip install google-api-python-client google-auth-oauthlib
       - name: Confirm workflow is running
         run: echo "BizJet Pilot livestream workflow triggered successfully."
+      - name: Test livestream announcements
+        run: |
+          python scripts/schedule_youtube.py
