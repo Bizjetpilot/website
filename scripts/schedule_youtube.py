@@ -44,3 +44,33 @@ def connect_to_youtube():
         "v3",
         credentials=credentials
     )
+
+
+def load_ready_streams():
+    """Find livestream announcements ready for scheduling."""
+
+    ready_streams = []
+
+    for file_path in STREAMS_FOLDER.glob("*.json"):
+        with file_path.open("r", encoding="utf-8") as file:
+            stream = json.load(file)
+
+        # Never schedule unfinished announcements
+        if stream.get("status") != "published":
+            continue
+
+        # Require a title, date and UTC time
+        if not all([
+            stream.get("title"),
+            stream.get("date"),
+            stream.get("time_utc")
+        ]):
+            continue
+
+        # Avoid announcements already linked to YouTube
+        if stream.get("youtube_url"):
+            continue
+
+        ready_streams.append((file_path, stream))
+
+    return ready_streams
