@@ -7,6 +7,7 @@ from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 
+ENABLE_BROADCAST_CREATION = False
 
 # Location of livestream announcements
 STREAMS_FOLDER = Path(
@@ -206,9 +207,11 @@ def schedule_ready_streams():
             print(f"Existing broadcast found: {stream['title']}")
             continue
 
-        print(f"Ready to schedule: {stream['title']}")
+    print(f"Ready to schedule: {stream['title']}")
         # SAFETY: Do not create YouTube broadcasts until explicitly enabled.
-        print("SAFE MODE — broadcast creation skipped.")
+        if not ENABLE_BROADCAST_CREATION:
+            print("SAFE MODE — broadcast creation skipped.")
+            continue
 def main():
     """Check announcements without creating YouTube broadcasts."""
     
