@@ -1,6 +1,11 @@
 name: BizJet Pilot YouTube Livestream
 
 
+concurrency:
+  group: bizjetpilot-youtube-livestream
+  cancel-in-progress: false
+
+
 permissions:
   contents: write
 
