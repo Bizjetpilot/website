@@ -234,7 +234,10 @@ def main():
             f"{stream['date']} {stream['time_utc']} UTC"
         )
 
-    print("SAFE TEST COMPLETE — no YouTube broadcasts created.")
+    if ENABLE_BROADCAST_CREATION:
+    print("YouTube scheduling run complete.")
+    else:
+    print("SAFE TEST COMPLETE – no YouTube broadcasts created.")
 
 
 if __name__ == "__main__":
