@@ -7,7 +7,7 @@ from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 
-ENABLE_BROADCAST_CREATION = False
+ENABLE_BROADCAST_CREATION = True
 
 # Location of livestream announcements
 STREAMS_FOLDER = Path(
