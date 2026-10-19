@@ -205,6 +205,7 @@ def schedule_ready_streams():
 
         if existing:
             print(f"Existing broadcast found: {stream['title']}")
+            save_youtube_link(file_path, stream, existing)
             continue
 
         print(f"Ready to schedule: {stream['title']}")
