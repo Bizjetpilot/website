@@ -235,9 +235,9 @@ def main():
         )
 
     if ENABLE_BROADCAST_CREATION:
-    print("YouTube scheduling run complete.")
+        print("YouTube scheduling run complete.")
     else:
-    print("SAFE TEST COMPLETE – no YouTube broadcasts created.")
+        print("SAFE TEST COMPLETE – no YouTube broadcasts created.")
 
 
 if __name__ == "__main__":
