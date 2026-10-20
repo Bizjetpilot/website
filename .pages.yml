@@ -70,7 +70,7 @@ content:
       - { name: category, label: Category, type: string }
       - { name: from, label: Departure airport, type: string }
       - { name: to, label: Destination airport, type: string }
-      - { name: aircraft, label: Aircraft, type: string }
+      - { name: aircraft, label: Aircraft, type: select, options: { values: ["Phenom 300E", "Cirrus SF50", "Citation Longitude", "Citation X", "Challenger 650"] } }
       - { name: simulator, label: Simulator, type: string }
       - { name: summary, label: Description, type: text }
       - { name: thumbnail, label: Stream thumbnail, type: image }
