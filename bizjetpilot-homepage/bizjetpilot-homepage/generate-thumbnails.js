@@ -69,11 +69,7 @@ async function generateThumbnail(stream) {
     aircraftFile
   );
 
-  const overlayPath = path.join(
-    root,
-    'assets',
-    'livestream-overlay.png'
-  );
+const overlayPath = path.join(root, 'assets', 'livestream-aircraft-overlay.png');
 
   const outputDir = path.join(
     root,
