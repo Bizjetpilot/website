@@ -1,0 +1,12 @@
+{
+  "title": "Phenom 300E Test Stream",
+  "slug": "Phenom-300E-Test-Stream",
+  "status": "draft",
+  "date": "2026-10-31",
+  "time_utc": "19:00",
+  "from": "EGGD",
+  "to": "LSGG",
+  "aircraft": "Phenom 300E",
+  "simulator": "MSFS2024",
+  "summary": "This is a Test Stream"
+}
