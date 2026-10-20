@@ -126,11 +126,14 @@ const overlayPath = path.join(root, 'assets', 'livestream-aircraft-overlay.png')
 
   await sharp(photo)
     .composite([
-      {
-        input: overlayPath,
-        top: 0,
-        left: 0
-      },
+{
+  input: await sharp(overlayPath)
+    .resize(WIDTH, HEIGHT, { fit: 'fill' })
+    .png()
+    .toBuffer(),
+  top: 0,
+  left: 0
+},
       {
         input: Buffer.from(textSvg),
         top: 0,
