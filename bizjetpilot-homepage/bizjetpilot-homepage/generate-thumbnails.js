@@ -101,9 +101,9 @@ const overlayPath = path.join(root, 'assets', 'livestream-aircraft-overlay.png')
     { text: stream.aircraft, x: 225, y: 620, size: 30 },
     { text: stream.from, x: 565, y: 620, size: 34 },
     { text: stream.to, x: 960, y: 620, size: 34 },
-    { text: stream.simulator, x: 1300, y: 602, size: 30 },
-    { text: formatDate(stream.date), x: 380, y: 785, size: 34 },
-    { text: formatTime(stream.time_utc), x: 9200, y: 785, size: 34 }
+    { text: stream.simulator, x: 1300, y: 620, size: 30 },
+    { text: formatDate(stream.date), x: 340, y: 785, size: 34 },
+    { text: formatTime(stream.time_utc), x: 920, y: 785, size: 34 }
   ];
 
   const textSvg = `
