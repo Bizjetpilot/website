@@ -96,13 +96,13 @@ const photo = await sharp(aircraftPath)
   })
   .extract({
     left: 0,
-    top: 230,
+    top: 260,
     width: WIDTH,
-    height: HEIGHT - 230
+    height: HEIGHT - 260
   })
   .extend({
     top: 0,
-    bottom: 230,
+    bottom: 260,
     left: 0,
     right: 0,
     background: '#07343b'
