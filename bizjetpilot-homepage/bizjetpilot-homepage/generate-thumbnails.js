@@ -89,13 +89,26 @@ const overlayPath = path.join(root, 'assets', 'livestream-aircraft-overlay.png')
   const outputName = `${slug}.png`;
   const outputPath = path.join(outputDir, outputName);
 
-  const photo = await sharp(aircraftPath)
-    .resize(WIDTH, HEIGHT, {
-      fit: 'cover',
-      position: 'south'
-    })
-    .png()
-    .toBuffer();
+const photo = await sharp(aircraftPath)
+  .resize(WIDTH, HEIGHT, {
+    fit: 'cover',
+    position: 'centre'
+  })
+  .extract({
+    left: 0,
+    top: 180,
+    width: WIDTH,
+    height: HEIGHT - 180
+  })
+  .extend({
+    top: 0,
+    bottom: 180,
+    left: 0,
+    right: 0,
+    background: '#07343b'
+  })
+  .png()
+  .toBuffer();
 
   const fields = [
     { text: stream.aircraft, x: 225, y: 620, size: 30 },
