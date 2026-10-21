@@ -92,7 +92,7 @@ const overlayPath = path.join(root, 'assets', 'livestream-aircraft-overlay.png')
   const photo = await sharp(aircraftPath)
     .resize(WIDTH, HEIGHT, {
       fit: 'cover',
-      position: 'centre'
+      position: 'south'
     })
     .png()
     .toBuffer();
