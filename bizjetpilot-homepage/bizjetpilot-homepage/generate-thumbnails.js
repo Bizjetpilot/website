@@ -95,17 +95,17 @@ const photo = await sharp(aircraftPath)
     position: 'centre'
   })
   .extract({
-    left: 0,
-    top: 260,
-    width: WIDTH,
-    height: HEIGHT - 260
-  })
-  .extend({
-    top: 0,
-    bottom: 260,
-    left: 0,
-    right: 0,
-    background: '#07343b'
+  left: 0,
+  top: 260,
+  width: WIDTH - 20,
+  height: HEIGHT - 260
+})
+.extend({
+  top: 0,
+  bottom: 260,
+  left: 20,
+  right: 0,
+  background: '#07343b'
   })
   .png()
   .toBuffer();
