@@ -107,7 +107,6 @@ const photo = await sharp(aircraftPath)
     right: 0,
     background: '#07343b'
   })
-  })
   .png()
   .toBuffer();
 
