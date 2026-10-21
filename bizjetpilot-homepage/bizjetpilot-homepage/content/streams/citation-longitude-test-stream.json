@@ -1,0 +1,14 @@
+{
+  "title": "Citation Longitude Test Stream",
+  "slug": "Citation-Longitude-Test-Stream",
+  "status": "published",
+  "date": "2026-10-29",
+  "time_utc": "19:00",
+  "category": "Test Stream",
+  "from": "LSGG",
+  "to": "EGGD",
+  "aircraft": "Citation Longitude",
+  "simulator": "MSFS 2024",
+  "summary": "Test Stream of the Longitude",
+  "thumbnail": "/assets/Cessna-Longitude.jpg"
+}
