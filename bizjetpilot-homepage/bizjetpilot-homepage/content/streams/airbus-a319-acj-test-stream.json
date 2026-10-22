@@ -1,13 +1,12 @@
 {
-  "title": "Airbus A319 ACJ Test Stream",
-  "slug": "Airbus-A319-ACJ-Test-Stream",
-  "status": "published",
-  "date": "2026-10-24",
-  "time_utc": "20:00",
-  "category": "Test Stream",
-  "from": "EGKK",
-  "to": "LSZH",
+  "title": "Airbus A319 ACJ Thumbnail Test",
+  "slug": "Airbus-A319-ACJ-Thumbnail-Test",
+  "status": "draft",
+  "date": "2026-10-30",
+  "time_utc": "19:00",
+  "from": "EGLL",
+  "to": "EGCC",
   "aircraft": "Airbus A319 ACJ",
   "simulator": "MSFS2024",
-  "summary": "Airbus A319 ACJ Test Stream"
+  "summary": "Temporary test of the Airbus A319 ACJ livestream thumbnail."
 }
