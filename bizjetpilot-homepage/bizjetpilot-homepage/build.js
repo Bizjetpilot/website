@@ -33,10 +33,12 @@ function md(s) {
 
   for (const line of lines) {
     const trimmed = line.trim();
-    const youtube = trimmed.match(
+    const youtubeLink = trimmed.match(/^\[([^\]]+)\]\((https?:\/\/[^)]+)\)$/);
+    const youtubeUrl = youtubeLink ? youtubeLink[2] : trimmed;
+
+    const youtube = youtubeUrl.match(
       /^https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtube\.com\/shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})(?:[&?].*)?$/
     );
-
     if (youtube) {
       closeParagraph();
       closeList();
