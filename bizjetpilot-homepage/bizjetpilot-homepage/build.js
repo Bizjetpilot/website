@@ -33,7 +33,26 @@ function md(s) {
 
   for (const line of lines) {
     const trimmed = line.trim();
+    const youtube = trimmed.match(
+      /^https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtube\.com\/shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})(?:[&?].*)?$/
+    );
 
+    if (youtube) {
+      closeParagraph();
+      closeList();
+
+      output.push(
+        '<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin:24px 0;border-radius:12px;">' +
+        '<iframe src="https://www.youtube-nocookie.com/embed/' + youtube[1] + '"' +
+        ' style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"' +
+        ' title="YouTube video player" loading="lazy"' +
+        ' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"' +
+        ' referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' +
+        '</div>'
+      );
+
+      continue;
+    }
     if (!trimmed) {
       closeParagraph();
       closeList();
