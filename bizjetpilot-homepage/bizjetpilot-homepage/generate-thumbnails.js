@@ -9,7 +9,9 @@ const aircraftImages = {
   'Cirrus SF50': 'Cirrus-SF50.jpg',
   'Citation Longitude': 'Cessna-Longitude.jpg',
   'Citation X': 'Cessna-Citation-X.jpg',
-  'Challenger 650': 'Challenger-650.jpg'
+  'Challenger 650': 'Challenger-650.jpg',
+  'Airbus A319 ACJ': 'Airbus-A319-ACJ.jpg',
+  'Airbus A320 ACJ': 'Airbus-A320-ACJ.jpg'
 };
 
 const WIDTH = 1536;
