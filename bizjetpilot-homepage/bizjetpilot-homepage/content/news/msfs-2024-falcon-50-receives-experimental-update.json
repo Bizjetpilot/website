@@ -1,0 +1,10 @@
+{
+  "title": "MSFS 2024: Falcon 50 receives experimental update",
+  "slug": "MSFS 2024:-Falcon-50-receives-experimental-update",
+  "status": "published",
+  "date": "2026-10-23",
+  "simulator": "MDFS2024",
+  "thumbnail": "/assets/contrail-falcon-fa50-microsoft-flight-simulator-1.webp",
+  "summary": "Contrail has released another experimental update for its Falcon 50.",
+  "body": "Contrail has released another experimental update for its Falcon 50.\n\nVersion **1.0.5-rc2** introduces several improvements, particularly to the aircraft's autopilot and autothrottle.\n\nNotable changes include smoother pitch-trim operation, improved autothrottle stability with hardware controllers, corrections to navigation behaviour and better frame-rate performance.\n\nThe passenger cabin also receives an improvement: entertainment screens can now alternate between flight statistics and a live route map.\n\nThe update remains on the **experimental channel** while further testing continues. It has not yet become the standard public release.\n\n**Sources:**\n\n[Full update details and changelog](https://msfsaddons.com/2026/10/22/contrails-fa50-gets-a-second-release-candidate-before-v1-0-5-goes-public/?utm_source=chatgpt.com)\n\n[Contrail's experimental-version instructions](https://support.contrail.shop/article/158-installing-experimental-versions?utm_source=chatgpt.com)"
+}
