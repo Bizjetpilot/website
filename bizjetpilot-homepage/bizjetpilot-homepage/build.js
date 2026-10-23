@@ -8,10 +8,18 @@ const site='BizJet Pilot', desc='Independent business jet flight simulation news
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const slug=s=>String(s).toLowerCase().replace(/[^a-z0-9-]/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
 function md(s) {
-  const inline = text => esc(text)
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.+?)\*/g, '<em>$1</em>');
+  const inline = text => {
+    const escaped = esc(text);
 
+    return escaped
+      .replace(
+        /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
+        (_, label, url) =>
+          `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`
+      )
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em>$1</em>');
+  };
   const lines = String(s || '').split(/\r?\n/);
   const output = [];
   let paragraph = [];
