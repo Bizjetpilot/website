@@ -1,0 +1,12 @@
+{
+  "title": "MSFS 2024 Sim Update 7.1 Released — Important Flight-Model Correction",
+  "slug": "MSFS-2024-Sim-Update-7.1-Released-—-Important-Flight-Model-Correction",
+  "status": "published",
+  "date": "2026-10-24",
+  "category": "Updates",
+  "simulator": "MSFS 2024",
+  "thumbnail": "/assets/MSFS2024-Banner-1024x449-1.jpg",
+  "summary": "Microsoft has officially released Sim Update 7.1, version 1.9.21.0.",
+  "body": "Date: 23 October 2026\n\nDeveloper: Microsoft / Asobo Studio\n\nSimulator: MSFS 2024\n\nStatus: Confirmed release\n\nMicrosoft has officially released Sim Update 7.1, version 1.9.21.0.\n\nThe important change for BizJet Pilot readers is a correction to an aerodynamic calculation that had incorrectly reduced aircraft drag.\n\nPrevious reporting identified affected aircraft including the FSReborn Phenom 300E and SimWorks Studios PC-12. However, the official release notes do not specify individual aircraft or quantify the performance improvement.\n\nThis is particularly relevant to pilots concerned with accurate cruise performance, descent planning and aircraft handling.\n\nOfficial source: Microsoft Flight Simulator — SU7.1 Release Notes\n\nCorroboration: MSFS Addons — Drag Calculation Issue",
+  "article_image": "/assets/MSFS2024-Banner-1024x449.jpg"
+}
