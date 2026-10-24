@@ -1,13 +1,13 @@
 {
-  "title": "Phenom 300E Test Stream",
-  "slug": "Phenom-300E-Test-Stream",
+  "title": "Airbus A319 ACJ Test Stream",
+  "slug": "Airbus-A319-ACJ-Test-Stream",
   "status": "published",
   "date": "2026-10-25",
   "time_utc": "19:00",
   "category": "Europe",
   "from": "EGGD",
   "to": "LSGG",
-  "aircraft": "Phenom 300E",
+  "aircraft": "Airbus A319 ACJ",
   "simulator": "MSFS2024",
-  "summary": "Cessna Longitude Test Live Stream Auto-data"
+  "summary": "Airbus A319 ACJ Test Live Stream Auto-data"
 }
