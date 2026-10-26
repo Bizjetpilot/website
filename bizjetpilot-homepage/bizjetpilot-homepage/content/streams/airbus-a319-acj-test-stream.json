@@ -1,0 +1,14 @@
+{
+  "title": "Airbus A319 ACJ Test Stream",
+  "slug": "Airbus-A319-ACJ-Test-Stream",
+  "status": "published",
+  "date": "2026-11-01",
+  "time_utc": "18:00",
+  "category": "Streams",
+  "from": "EGKK",
+  "to": "EDDS",
+  "aircraft": "Airbus A319 ACJ",
+  "simulator": "MSFS2024",
+  "summary": "Live Stream Test from Gatwick (EGKK) to Stuttgart (EDDS)",
+  "thumbnail": "/assets/Airbus-A319-ACJ.jpg"
+}
