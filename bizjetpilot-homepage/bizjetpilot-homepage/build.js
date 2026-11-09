@@ -171,7 +171,21 @@ write('/live-streams/',shell('Live Streams',`<div class="wrap interior"><div cla
 }).map(card).join('') || '<p class="empty">No previous livestreams available yet.</p>'}</div></div>`,'Live Streams'));
 for(const x of all.streams){write('/live-streams/'+x.slug+'/',shell(x.title,`<div class="wrap article"><a class="back" href="/live-streams/">← Live Streams</a><h1>${esc(x.title)}</h1><img class="wideimage" src="${esc(x.generatedThumbnail || '/assets/livestream-template.png')}" alt="Live stream artwork"><p>${esc(x.summary)}</p><dl class="flightdata"><dt>From</dt><dd>${esc(x.from)}</dd><dt>To</dt><dd>${esc(x.to)}</dd><dt>Aircraft</dt><dd>${esc(x.aircraft)}</dd><dt>Simulator</dt><dd>${esc(x.simulator)}</dd><dt>Date / UTC</dt><dd>${esc(x.date)} ${esc(x.time_utc)}</dd></dl>${x.youtube_url?`<a class="btn" href="${esc(x.youtube_url)}">Watch on YouTube ↗</a>`:''}${x.twitch_url?`<a class="btn outline" href="${esc(x.twitch_url)}">Watch on Twitch ↗</a>`:''}</div>`,'Live Streams'))}
 write('/resources/',shell('Resources',`<div class="wrap interior"><div class="pagetop"><span class="eyebrow">FLIGHT SIM TOOLKIT</span><h1>Resources</h1><p>Useful starting points for business jet flight simulation. External services are independent of BizJet Pilot.</p></div><div class="cards">${[['Microsoft Flight Simulator','https://www.flightsimulator.com/','Official Microsoft Flight Simulator news and updates.'],['X-Plane','https://www.x-plane.com/','Official X-Plane simulator information.'],['SimBrief','https://www.simbrief.com/','Flight planning and operational flight plans.'],['VATSIM','https://vatsim.net/','Online air traffic control network.'],['Navigraph','https://navigraph.com/','Navigation charts and data services.'],['Little Navmap','https://albar965.github.io/littlenavmap.html','Free flight planning and moving-map software.']].map(([t,u,d])=>`<a class="card resource" href="${u}" target="_blank" rel="noopener noreferrer"><div class="cardbody"><h3>${t} ↗</h3><p>${d}</p></div></a>`).join('')}</div></div>`,'Resources'));
-write('/contact/',shell('Contact',`<div class="wrap interior narrow"><div class="pagetop"><span class="eyebrow">GET IN TOUCH</span><h1>Contact BizJet Pilot</h1><p>News tips, review enquiries, developer announcements, collaboration opportunities or feedback are all welcome.</p></div><div class="panel"><h2>Send an enquiry</h2><p>Contact details are being finalised. Until then, please use the contact information published on BizJet Pilot's official YouTube or Twitch channel.</p><p class="note">A secure contact form will be added once a form service and destination email are configured. This page does not currently collect or submit personal information.</p></div></div>`,'Contact'));
+write('/contact/',shell('Contact',`<div class="wrap interior narrow"><div class="pagetop"><span class="eyebrow">GET IN TOUCH</span><h1>Contact BizJet Pilot</h1><p>News tips, review enquiries, developer announcements, collaboration opportunities or feedback are all welcome.</p></div><div class="panel"><h2>Send an enquiry</h2><p>Email us at contact@bizjetpilot.me.</p><a class="btn" href="mailto:contact@bizjetpilot.me">Email BizJet Pilot</a></div><section class="panel contact-form-panel" aria-labelledby="form-title">
+<h2 id="form-title">Send us a message</h2>
+<p>Use this form to get in touch directly from the website.</p>
+<form class="contact-form" action="https://formspree.io/f/xeaayqvy" method="post">
+<label for="contact-name">Your name (required)</label>
+<input id="contact-name" name="name" autocomplete="name" required>
+<label for="contact-email">Your email (required)</label>
+<input id="contact-email" name="email" type="email" autocomplete="email" required>
+<label for="contact-subject">Subject (optional)</label>
+<input id="contact-subject" name="subject">
+<label for="contact-message">Your message (required)</label>
+<textarea id="contact-message" name="message" rows="6" required></textarea>
+<button class="btn" type="submit">Send message</button>
+</form>
+</section></div>`,'Contact'));
 write('/privacy/',shell('Privacy',`<div class="wrap interior narrow">
 <h1>Privacy Policy</h1>
 <p><strong>BizJet Pilot</strong> is a flight simulation website covering business aviation, livestreams, news, reviews and tutorials.</p>
